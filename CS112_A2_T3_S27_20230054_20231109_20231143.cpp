@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Check the validity of the entered numbers
+// Check the validity of the entered numbers.
 void validity(){
 
 
 }
 
-// Function for Rational Number Calculator
+// Function for Rational Number Calculator.
 string R_N_C(){
 
 
