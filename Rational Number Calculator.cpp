@@ -1,3 +1,17 @@
+// File: CS112_A2_T3_S27_ 20230054_20231143_20231109.cpp
+// Purpose: Description of your game
+
+// --> Author 1: Mohammed Atef Abd EL-Kader Bayomi.    (ID:20231143)         (Section : S27)
+// --> Email : mohamed45452020@gmail.com
+
+// --> Author 2: Esraa Emary Abd Elsalam.             (ID:20230054)         (Section : S27)
+// --> Email : esraaemary33@gmail.com
+
+// --> Author 3: Aly El-Deen Yasser Aly.            (ID:20231109)         (Section : S27)
+// --> Email : aibakgaming747@gmail.com
+
+// ============================================================================================================================================================================== //
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -57,6 +71,6 @@ int main(){
         if(choice == 2)
             break;
     }
-    cout << "Thanks for using our application..." << endl;
+    cout << "Thanks for using our application ...." << endl;
     return 0;
 }
