@@ -128,7 +128,7 @@ int main(){
 
         // To do what user wants.
         switch (operation){
-            // Addition.
+                // Addition.
             case '+':
                 numerator_result = (numerator1 * denominator2) + (numerator2 * denominator1);
                 denominator_result = denominator1 * denominator2;
