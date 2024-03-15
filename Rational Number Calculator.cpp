@@ -41,8 +41,8 @@ int main(){
     // To show the user the rules of the calculator.
     cout << "# ===== Welcome to Rational Numbers Calculator ===== #" << endl;
     cout << "--> In this calculator we will enter two fractional number and make addition, subtraction, multiplication and division " << endl;
-    cout << "    to give you the answer of your equation " << endl;
-    cout << "--> The form that you will enter must be like that [ num / num (+, -, * or /) num / num ]" << endl;
+    cout << "    to give you the answer of your equation." << endl;
+    cout << "--> The form that you will enter must be like that [ num / num (+, -, * or /) num / num ]." << endl;
     cout << "======================================================================================================================" << endl;
 
 
