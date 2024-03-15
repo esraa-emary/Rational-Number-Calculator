@@ -50,8 +50,8 @@ int main(){
     while (true){
 
         // Defining some variables.
-        string text, continue_or, numerator_1 = "", dumerator_1 = "", numerator_2 = "", dumerator_2 = "", num1, num2;
-        ll numerator1 = 1, dumerator1 = 1, numerator2 = 1, dumerator2 = 1,dumerator_result,numerator_result;
+        string text, continue_or, numerator_1 = "", denominator_1 = "", numerator_2 = "", denominator_2 = "", num1, num2;
+        ll numerator1 = 1, denominator1 = 1, numerator2 = 1, denominator2 = 1, denominator_result, numerator_result;
         bool check = false, check1 = false;
         char operation;
         regex formela ("([-]*[0-9]+/[-]*[1-9]+)([+*/-])([-]*[0-9]+/[-]*[1-9]+)");
@@ -107,7 +107,7 @@ int main(){
             if(!check)
                 numerator_1 += i;
             else
-                dumerator_1 += i;
+                denominator_1 += i;
         }
 
         for(char i : num2){
@@ -118,53 +118,53 @@ int main(){
             if(!check1)
                 numerator_2 += i;
             else
-                dumerator_2 += i;
+                denominator_2 += i;
         }
 
         numerator1 = stoll(numerator_1);
         numerator2 = stoll(numerator_2);
-        dumerator1 = stoll(dumerator_1);
-        dumerator2 = stoll(dumerator_2);
+        denominator1 = stoll(denominator_1);
+        denominator2 = stoll(denominator_2);
 
         // To do what user wants.
         switch (operation){
             // Addition.
             case '+':
-                numerator_result = (numerator1 * dumerator2) + (numerator2 * dumerator1);
-                dumerator_result = dumerator1 * dumerator2;
-                if(numerator_result % dumerator_result == 0){
-                    numerator_result /= dumerator_result;
-                    dumerator_result = 1;
+                numerator_result = (numerator1 * denominator2) + (numerator2 * denominator1);
+                denominator_result = denominator1 * denominator2;
+                if(numerator_result % denominator_result == 0){
+                    numerator_result /= denominator_result;
+                    denominator_result = 1;
                 }
-                simple(numerator_result, dumerator_result);
+                simple(numerator_result, denominator_result);
                 cout << endl;
                 break;
 
-            // Subtraction.
+                // Subtraction.
             case '-':
-                numerator_result = (numerator1 * dumerator2) - (numerator2 * dumerator1);
-                dumerator_result = dumerator1 * dumerator2;
-                if(numerator_result % dumerator_result == 0){
-                    numerator_result /= dumerator_result;
-                    dumerator_result = 1;
+                numerator_result = (numerator1 * denominator2) - (numerator2 * denominator1);
+                denominator_result = denominator1 * denominator2;
+                if(numerator_result % denominator_result == 0){
+                    numerator_result /= denominator_result;
+                    denominator_result = 1;
                 }
-                simple(numerator_result, dumerator_result);
+                simple(numerator_result, denominator_result);
                 cout << endl;
                 break;
 
-            // Multiplication.
+                // Multiplication.
             case '*':
                 numerator_result = numerator1 * numerator2;
-                dumerator_result = dumerator1 * dumerator2;
-                if(numerator_result % dumerator_result == 0){
-                    numerator_result /= dumerator_result;
-                    dumerator_result = 1;
+                denominator_result = denominator1 * denominator2;
+                if(numerator_result % denominator_result == 0){
+                    numerator_result /= denominator_result;
+                    denominator_result = 1;
                 }
-                simple(numerator_result, dumerator_result);
+                simple(numerator_result, denominator_result);
                 cout << endl;
                 break;
 
-            // Division.
+                // Division.
             case '/':
 
                 break;
