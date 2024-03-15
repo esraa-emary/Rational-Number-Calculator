@@ -42,7 +42,7 @@ int main(){
     cout << "# ===== Welcome to Rational Numbers Calculator ===== #" << endl;
     cout << "--> In this calculator we will enter two fractional number and make addition, subtraction, multiplication and division " << endl;
     cout << "    to give you the answer of your equation " << endl;
-    cout << "--> The form that you will enter must e like that [ num / num (+, -, * or /) num / num ]" << endl;
+    cout << "--> The form that you will enter must be like that [ num / num (+, -, * or /) num / num ]" << endl;
     cout << "======================================================================================================================" << endl;
 
 
@@ -73,7 +73,7 @@ int main(){
 
 
 
-            if((regex_match(text1, matches, formela)) || regex_match(text1, matches, formela1)|| regex_match(text1, matches, formela2)|| regex_match(text1, matches, formela3)){
+            if((regex_match(text1, matches, formela)) || regex_match(text1, matches, formela1) || regex_match(text1, matches, formela2) || regex_match(text1, matches, formela3)){
 
                 operation = matches[2].str()[0];
                 if(operation == '/'){
@@ -81,7 +81,7 @@ int main(){
                     regex fractionformela1 ("([-]*[0-9]+/[-]*[1-9]+)/([-]*[1-9]+)");
                     regex fractionformela2 ("([-]*[0-9]+)/([-]*[1-9]+/[-]*[1-9]+)");
                     regex fracrionformela3 ("([-]*[0-9]+)/([-]*[1-9]+)");
-                    if((regex_match(text1, matches, fractionformela)) || regex_match(text1, matches, fractionformela1)|| regex_match(text1, matches, fractionformela2)|| regex_match(text1, matches, fracrionformela3))
+                    if((regex_match(text1, matches, fractionformela)) || regex_match(text1, matches, fractionformela1) || regex_match(text1, matches, fractionformela2) || regex_match(text1, matches, fracrionformela3))
                         break;
                     else
                         cout << "Please enter with the defined formula and dont enter a zero in the denominator." << endl;
