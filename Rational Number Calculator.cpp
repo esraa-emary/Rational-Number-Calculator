@@ -13,45 +13,46 @@
 --> Author 3: Aly El-Deen Yasser Aly.                 (ID:20231109)         (Section : S27)
 --> Email : aibakgaming747@gmail.com
 
-========================================================== Algorithm for: ===================================================================
-=================================================== (Rational Number Calculator) ============================================================
+=============================================================== Algorithm for: ========================================================================
+======================================================== (Rational Number Calculator) =================================================================
 
 •	Print	“a welcome message and lines in brief to define the application.”
-•	Make a while loop to make the program running until the user choose to exit after each operation.
+•	Make a while loop to make the program running until the user chooses to exit after each operation.
 •	Define some variables.
 •	Take an expression from user to calculate as a string.
-•	Check the validity of the expression as it doesn’t have characters except numbers and (-, +, /or*), if that didn’t achieved print a warning message and take another expression from the user.
-•	Turn the expression into numbers and operators in the form [numerator1/denominator1 (-, +, /or*) numerator2/ denominator2] as numerator1, denominator1, numerator2and denominator2 are integers positive or negative.
+•	Check the validity of the expression as it doesn’t have characters except numbers and (-, +, /or*), if that didn’t achieve print a warning message and take another expression from the user.
+•	Turn the expression into numbers and operators in the form [numerator1/denominator1 (-, +, /or*) numerator2/ denominator2] as numerator1, denominator1, numerator2 and denominator2 are integers positive or negative.
 
 •	If operation is /, do the following lines:
- 
-        o	Check if denominator1, numerator2 or denominator2 is zero and if this happened, print warning message and take another expression from the user.
+
+        o	Check if denominator1, numerator2 or denominator2 is zero, and if this happened, print a warning message and take another expression from the user.
         o	The result of the expression will be (numerator1*denominator2)/ (denominator1*numerator2).
 
 
 •	If operation is *, do the following lines:
 
-        o	Check if denominator1 or denominator2 is zero and if this happened, print warning message and take another expression from the user.
+        o	Check if denominator1 or denominator2 is zero, and if this happened, print a warning message and take another expression from the user.
         o	The result of the expression will be (numerator1* numerator2)/ (denominator1* denominator2).
 
 
 •	If operation is +, do the following lines:
 
-        o	Check if denominator1 or denominator2 is zero and if this happened, print warning message and take another expression from the user.
+        o	Check if denominator1 or denominator2 is zero, and if this happened, print a warning message and take another expression from the user.
         o	The result of the expression will be ((numerator1* denominator2) + (numerator2 * denominator1)) / (denominator1* denominator2).
 
 
 •	If operation is -, do the following lines:
 
-        o	Check if denominator1 or denominator2 is zero and if this happened, print warning message and take another expression from the user.
+        o	Check if denominator1 or denominator2 is zero, and if this happened, print a warning message and take another expression from the user.
         o	The result of the expression will be ((numerator1* denominator2) - (numerator2 * denominator1)) / (denominator1* denominator2).
 */
-// ==========================================================Main Code===================================================================
+// ==========================================================>> Main Code <<=================================================================== //
+
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
 
-// function for simplifing
+// Function for simplifying.
 void simple (ll a, ll b)
 {
     ll r, n = a, d = b;
@@ -73,12 +74,12 @@ void simple (ll a, ll b)
 // =====================================================================>> Main Application <<===================================================================== //
 
 int main(){
-        // To show the user the rules of the calculator.
+    // To show the user the rules of the calculator.
     cout << "# ==================================== Welcome to Rational Numbers Calculator ======================================= #" << endl << endl;
     cout << "--> In this calculator we will enter two fractional number and make addition, subtraction, multiplication and division " << endl;
     cout << "    to give you the answer of your expression." << endl;
     cout << "--> The form that you will enter must be like that [num/num (+, -, * or /) num/num]." << endl;
-    cout << "Note : space after the the fractional number is important." << endl;
+    cout << "Note : Space after the the fractional number is important." << endl;
     cout << "======================================================================================================================" << endl;
 
     // To keep the program running.
@@ -92,6 +93,7 @@ int main(){
 
         // To check program is as the required form
         while(true){
+
             // Defining some variables.
             check = false, check1 = false;
             numerator_1 = "", denominator_1 = "", numerator_2 = "", denominator_2 = "";
@@ -136,16 +138,16 @@ int main(){
 
                 // to check if denomerator not equal to zero
                 if(operation == '/'){
-                    if(denominator1 != 0 && denominator2 != 0 && numerator2 != 0) 
+                    if(denominator1 != 0 && denominator2 != 0 && numerator2 != 0)
                         break;
                     else
-                        cout << "please don't enter a zero in the denominator." << endl << endl;
+                        cout << "Please don't enter a zero in the denominator." << endl << endl;
                 }
                 else{
-                    if(denominator1 != 0 && denominator2 != 0) 
+                    if(denominator1 != 0 && denominator2 != 0)
                         break;
                     else
-                        cout << "please don't enter a zero in the denominator." << endl << endl;
+                        cout << "Please don't enter a zero in the denominator." << endl << endl;
                 }
             }
 
@@ -153,9 +155,9 @@ int main(){
                 cout << "Please enter with the defined formula and don't enter a zero in the denominator." << endl << endl;
         }
 
-            // To do what user wants.
+        // To do what user wants.
         switch (operation){
-                // Addition.
+            // Addition.
             case '+':
                 numerator_result = (numerator1 * denominator2) + (numerator2 * denominator1);
                 denominator_result = denominator1 * denominator2;
@@ -206,7 +208,7 @@ int main(){
                 break;
         }
 
-            // To check if user wants to continue using calculator or not.
+        // To check if user wants to continue using calculator or not.
         while(true){
             cout << "Do you want to continue?\n [1] Yes.\n [2] No.\nEnter Your Choice : " ;
             getline(cin, continue_or);
