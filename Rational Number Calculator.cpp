@@ -13,12 +13,45 @@
 --> Author 3: Aly El-Deen Yasser Aly.                 (ID:20231109)         (Section : S27)
 --> Email : aibakgaming747@gmail.com
 
-=======================================================================================================================================================*/
+========================================================== Algorithm for: ===================================================================
+=================================================== (Rational Number Calculator) ============================================================
+
+•	Print	“a welcome message and lines in brief to define the application.”
+•	Make a while loop to make the program running until the user choose to exit after each operation.
+•	Define some variables.
+•	Take an expression from user to calculate as a string.
+•	Check the validity of the expression as it doesn’t have characters except numbers and (-, +, /or*), if that didn’t achieved print a warning message and take another expression from the user.
+•	Turn the expression into numbers and operators in the form [numerator1/denominator1 (-, +, /or*) numerator2/ denominator2] as numerator1, denominator1, numerator2and denominator2 are integers positive or negative.
+
+•	If operation is /, do the following lines:
+ 
+        o	Check if denominator1, numerator2 or denominator2 is zero and if this happened, print warning message and take another expression from the user.
+        o	The result of the expression will be (numerator1*denominator2)/ (denominator1*numerator2).
+
+
+•	If operation is *, do the following lines:
+
+        o	Check if denominator1 or denominator2 is zero and if this happened, print warning message and take another expression from the user.
+        o	The result of the expression will be (numerator1* numerator2)/ (denominator1* denominator2).
+
+
+•	If operation is +, do the following lines:
+
+        o	Check if denominator1 or denominator2 is zero and if this happened, print warning message and take another expression from the user.
+        o	The result of the expression will be ((numerator1* denominator2) + (numerator2 * denominator1)) / (denominator1* denominator2).
+
+
+•	If operation is -, do the following lines:
+
+        o	Check if denominator1 or denominator2 is zero and if this happened, print warning message and take another expression from the user.
+        o	The result of the expression will be ((numerator1* denominator2) - (numerator2 * denominator1)) / (denominator1* denominator2).
+*/
+// ==========================================================Main Code===================================================================
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
 
-
+// function for simplifing
 void simple (ll a, ll b)
 {
     ll r, n = a, d = b;
@@ -41,92 +74,84 @@ void simple (ll a, ll b)
 
 int main(){
         // To show the user the rules of the calculator.
-    cout << "# ===== Welcome to Rational Numbers Calculator ===== #" << endl;
+    cout << "# ==================================== Welcome to Rational Numbers Calculator ======================================= #" << endl << endl;
     cout << "--> In this calculator we will enter two fractional number and make addition, subtraction, multiplication and division " << endl;
-    cout << "    to give you the answer of your equation." << endl;
-    cout << "--> The form that you will enter must be like that [ num / num (+, -, * or /) num / num ]." << endl;
+    cout << "    to give you the answer of your expression." << endl;
+    cout << "--> The form that you will enter must be like that [num/num (+, -, * or /) num/num]." << endl;
+    cout << "Note : space after the the fractional number is important." << endl;
     cout << "======================================================================================================================" << endl;
 
-
-        // To keep the program running.
+    // To keep the program running.
     while (true){
-
-            // Defining some variables.
         string text, continue_or, numerator_1 = "", denominator_1 = "", numerator_2 = "", denominator_2 = "", num1, num2;
         ll numerator1 = 1, denominator1 = 1, numerator2 = 1, denominator2 = 1, denominator_result, numerator_result;
         bool check = false, check1 = false;
         char operation;
-        regex formela ("([-+]*[0-9]+/[-+]*[1-9]+)([+*/-])([-+]*[0-9]+/[-+]*[1-9]+)");
-        regex formela1 ("([-+]*[0-9]+/[-+]*[1-9]+)([+*/-])([-+]*[0-9]+)");
-        regex formela2 ("([-+]*[0-9]+)([+*/-])([-+]*[0-9]+/[-+]*[1-9]+)");
-        regex formela3 ("([-+]*[0-9]+)([+*/-])([-+]*[0-9]+)");
+        regex formela ("(\\s*[-+]?\\s*[0-9]+\\s*/\\s*[-+]?\\s*[0-9]+\\s*|\\s*[-+]?\\s*[0-9]+\\s*)\\s+([+*/-])\\s+(\\s*[-+]?\\s*[0-9]+\\s*/\\s*[-+]?\\s*[0-9]+\\s*|\\s*[-+]?\\s*[0-9]+\\s*)");
         smatch matches;
 
-            // To check program is as the required form
+        // To check program is as the required form
         while(true){
-            string text1 = "";
+            // Defining some variables.
+            check = false, check1 = false;
+            numerator_1 = "", denominator_1 = "", numerator_2 = "", denominator_2 = "";
+            numerator1 = 1, denominator1 = 1, numerator2 = 1, denominator2 = 1;
             cout << "Enter the equation you want to calculate : ";
             getline(cin, text);
 
-            for(char i : text){
-                if(!isspace(i))
-                    text1 += i;
-            }
-
-            if((regex_match(text1, matches, formela)) || regex_match(text1, matches, formela1) || regex_match(text1, matches, formela2) || regex_match(text1, matches, formela3)){
+            if(regex_match(text, matches, formela)){
 
                 operation = matches[2].str()[0];
-                if(operation == '/'){
-                    regex fractionformela ("([-+]?[0-9]+/[-+]?[1-9]+)(/)([-+]?[1-9]+/[-+]?[1-9]+)");
-                    regex fractionformela1 ("([-+]?[0-9]+/[-+]?[1-9]+)(/)([-+]?[1-9]+)");
-                    regex fractionformela2 ("([-+]?[0-9]+)(/)([-+]?[1-9]+/[-+]?[1-9]+)");
-                    regex fracrionformela3 ("([-+]?[0-9]+)(/)([-+]?[1-9]+)");
-                    if((regex_match(text1, matches, fractionformela)) || regex_match(text1, matches, fractionformela1) || regex_match(text1, matches, fractionformela2) || regex_match(text1, matches, fracrionformela3))
-                        break;
-                    else
-                        cout << "Please enter with the defined formula and don't enter a zero in the denominator." << endl;
+                num1 = matches[1];
+                num2 = matches[3];
+
+                for(char i : num1){
+                    if(i == '/'){
+                        check = true;
+                        continue;
+                    }
+                    if(!check && i != '+' && i != ' ')
+                        numerator_1 += i;
+                    else if (i != '+' && i != ' ')
+                        denominator_1 += i;
                 }
 
-                else
-                    break;
+                for(char i : num2){
+                    if(i == '/'){
+                        check1 = true;
+                        continue;
+                    }
+                    if(!check1 && i != '+' && i != ' ')
+                        numerator_2 += i;
+                    else if(i != '+' && i != ' ')
+                        denominator_2 += i;
+                }
+
+                numerator1 = stoll(numerator_1);
+                numerator2 = stoll(numerator_2);
+                if(denominator_1 != "")
+                    denominator1 = stoll(denominator_1);
+                if(denominator_2 != "")
+                    denominator2 = stoll(denominator_2);
+
+                // to check if denomerator not equal to zero
+                if(operation == '/'){
+                    if(denominator1 != 0 && denominator2 != 0 && numerator2 != 0) 
+                        break;
+                    else
+                        cout << "please don't enter a zero in the denominator." << endl << endl;
+                }
+                else{
+                    if(denominator1 != 0 && denominator2 != 0) 
+                        break;
+                    else
+                        cout << "please don't enter a zero in the denominator." << endl << endl;
+                }
             }
 
             else
-                cout << "Please enter with the defined formula and don't enter a zero in the denominator." << endl;
+                cout << "Please enter with the defined formula and don't enter a zero in the denominator." << endl << endl;
         }
-
-        num1 = matches[1];
-        num2 = matches[3];
-
-
-        for(char i : num1){
-            if(i == '/'){
-                check = true;
-                continue;
-            }
-            if(!check && i != '+')
-                numerator_1 += i;
-            else if (i != '+')
-                denominator_1 += i;
-        }
-
-        for(char i : num2){
-            if(i == '/'){
-                check1 = true;
-                continue;
-            }
-            if(!check1 && i != '+')
-                numerator_2 += i;
-            else if(i != '+')
-                denominator_2 += i;
-        }
-
-        numerator1 = stoll(numerator_1);
-        numerator2 = stoll(numerator_2);
-        if(denominator_1 != "")
-            denominator1 = stoll(denominator_1);
-        if(denominator_2 != "")
-            denominator2 = stoll(denominator_2);
 
             // To do what user wants.
         switch (operation){
@@ -197,4 +222,6 @@ int main(){
             cout << endl;
         }
     }
+
+    return 0;
 }
