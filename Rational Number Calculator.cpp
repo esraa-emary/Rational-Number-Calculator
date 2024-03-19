@@ -13,6 +13,17 @@
 --> Author 3: Aly El-Deen Yasser Aly.                 (ID:20231109)         (Section : S27)
 --> Email : aibakgaming747@gmail.com
 
+=============================================================================================================================
+
+--> Author 1: Mohammed Atef Abd EL-Kader Bayomi.        addition and subtraction. 
+
+--> Author 2: Esraa Emary Abd Elsalam.                  multiplication and division.
+
+--> Author 3: Aly El-Deen Yasser Aly.                   Handling regex, formatting menus and Error handling.
+
+==============================================================================================================================
+
+
 =============================================================== Algorithm for: ========================================================================
 ======================================================== (Rational Number Calculator) =================================================================
 
