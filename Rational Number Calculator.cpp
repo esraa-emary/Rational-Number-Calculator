@@ -16,13 +16,8 @@
 =============================================================================================================================
 
 --> Author 1: Mohammed Atef Abd EL-Kader Bayomi.        addition and subtraction. 
-
 --> Author 2: Esraa Emary Abd Elsalam.                  multiplication and division.
-
 --> Author 3: Aly El-Deen Yasser Aly.                   Handling regex, formatting menus and Error handling.
-
-==============================================================================================================================
-
 
 =============================================================== Algorithm for: ========================================================================
 ======================================================== (Rational Number Calculator) =================================================================
@@ -35,25 +30,18 @@
 •	Turn the expression into numbers and operators in the form [numerator1/denominator1 (-, +, /or*) numerator2/ denominator2] as numerator1, denominator1, numerator2 and denominator2 are integers positive or negative.
 
 •	If operation is /, do the following lines:
-
         o	Check if denominator1, numerator2 or denominator2 is zero, and if this happened, print a warning message and take another expression from the user.
         o	The result of the expression will be (numerator1*denominator2)/ (denominator1*numerator2).
 
-
 •	If operation is *, do the following lines:
-
         o	Check if denominator1 or denominator2 is zero, and if this happened, print a warning message and take another expression from the user.
         o	The result of the expression will be (numerator1* numerator2)/ (denominator1* denominator2).
 
-
 •	If operation is +, do the following lines:
-
         o	Check if denominator1 or denominator2 is zero, and if this happened, print a warning message and take another expression from the user.
         o	The result of the expression will be ((numerator1* denominator2) + (numerator2 * denominator1)) / (denominator1* denominator2).
 
-
 •	If operation is -, do the following lines:
-
         o	Check if denominator1 or denominator2 is zero, and if this happened, print a warning message and take another expression from the user.
         o	The result of the expression will be ((numerator1* denominator2) - (numerator2 * denominator1)) / (denominator1* denominator2).
 */
@@ -109,7 +97,7 @@ int main(){
             check = false, check1 = false;
             numerator_1 = "", denominator_1 = "", numerator_2 = "", denominator_2 = "";
             numerator1 = 1, denominator1 = 1, numerator2 = 1, denominator2 = 1;
-            cout << "Enter the equation you want to calculate : ";
+            cout << "Enter the equation you want to calculate :";
             getline(cin, text);
 
             if(regex_match(text, matches, formela)){
@@ -221,13 +209,13 @@ int main(){
 
         // To check if user wants to continue using calculator or not.
         while(true){
-            cout << "Do you want to continue?\n [1] Yes.\n [2] No.\nEnter Your Choice : " ;
+            cout << "Do you want to continue?\n [1] Yes.\n [2] No.\nEnter Your Choice :" ;
             getline(cin, continue_or);
 
             if (continue_or == "1")
                 break;
             else if (continue_or == "2"){
-                cout << "\nThanks For Using Rational Number Calculator ....\n";
+                cout << "\n ===> Thanks For Using Rational Number Calculator ....\n";
                 return 0;
             }
             else
