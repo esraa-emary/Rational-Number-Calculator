@@ -11,6 +11,7 @@
 - [Examples](#examples)
 - [Test Cases](#test-cases)
 - [Contributing](#contributing)
+- [Authors](#authors)
 - [License](#license)
 
 ## About
@@ -110,6 +111,11 @@ Below are sample test cases to verify the calculator's functionality.
 4. Submit a pull request.
 
 Contributions are welcome for new features, bug fixes, and improving documentation.
+
+## Authors
+- Mohammed Atef Abd EL-Kader - 20231143
+- Esraa Emary Abd Elsalam - 20230054
+- Aly El-Deen Yasser Aly - 20231109
 
 ## License
 This project is licensed under the MIT License. See `LICENSE` for details.
